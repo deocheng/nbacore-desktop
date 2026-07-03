@@ -1,0 +1,33 @@
+{
+  "name": "nbacore-desktop",
+  "version": "1.0.0",
+  "description": "NBACore Desktop — NBA Data Platform",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder --win",
+    "server": "python server/api_server.py"
+  },
+  "keywords": ["nba", "data", "crawler", "dashboard"],
+  "author": "NBACore",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.nbacore.desktop",
+    "productName": "NBACore Desktop",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "server/**/*"
+    ]
+  }
+}
