@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Build
+dist/
+build/
+
+# Data
+*.csv
+*.csv.gz
+*.db
+crawl_status.json
+
+# Electron
+out/
