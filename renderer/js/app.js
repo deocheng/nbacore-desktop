@@ -27,7 +27,7 @@ const I18N = {
     col_table: 'Table', col_rows: 'Rows', col_size: 'Size',
     col_player: 'Player', col_team: 'Team',
     lbl_season: 'Season:', lbl_interval: 'Request Interval (s):',
-    lbl_duration: 'Max Duration (s):',
+    lbl_duration: 'Max Duration (h):',
     hint_duration: '0 = no limit',
     ph_search: 'Search...', ph_player_name: 'Player name...',
     btn_refresh: 'Refresh', btn_search: 'Search', btn_compare: 'Compare',
@@ -74,7 +74,7 @@ const I18N = {
     col_table: '表名', col_rows: '行数', col_size: '大小',
     col_player: '球员', col_team: '球队',
     lbl_season: '赛季:', lbl_interval: '请求间隔 (秒):',
-    lbl_duration: '最大持续时间 (秒):',
+    lbl_duration: '最大持续时间 (小时):',
     hint_duration: '0 = 无限制',
     ph_search: '搜索...', ph_player_name: '球员姓名...',
     btn_refresh: '刷新', btn_search: '搜索', btn_compare: '对比',
@@ -457,10 +457,11 @@ async function searchPlayers() {
 // ── Crawler Control ──
 function getCrawlParams() {
   const interval = parseInt(document.getElementById('crawlInterval')?.value) || 0;
-  const duration = parseInt(document.getElementById('crawlDuration')?.value) || 0;
+  const durationHours = parseFloat(document.getElementById('crawlDuration')?.value) || 0;
+  const durationSeconds = Math.round(durationHours * 3600); // convert hours to seconds
   const params = {};
   if (interval > 0) params.interval = interval;
-  if (duration > 0) params.duration = duration;
+  if (durationSeconds > 0) params.duration = durationSeconds;
   return params;
 }
 
