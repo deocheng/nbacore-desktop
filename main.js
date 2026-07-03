@@ -118,6 +118,7 @@ function createWindow() {
     minHeight: 700,
     title: 'NBACore Desktop',
     backgroundColor: '#0a0e17',
+    icon: path.join(__dirname, 'nba-icon.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,

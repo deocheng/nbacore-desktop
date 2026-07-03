@@ -21,13 +21,14 @@
     "productName": "NBACore Desktop",
     "win": {
       "target": "nsis",
-      "icon": "assets/icon.png"
+      "icon": "nba-icon.ico"
     },
     "files": [
       "main.js",
       "preload.js",
       "renderer/**/*",
-      "server/**/*"
+      "server/**/*",
+      "nba-icon.ico"
     ]
   }
 }
